@@ -40,7 +40,7 @@ COPY ./www /var/www/html
 
 WORKDIR /var/www/html
 
-RUN composer install --optimize-autoloader --no-dev && php artisan route:cache && php artisan config:cache && php artisan view:cache
+RUN composer update && composer install --optimize-autoloader --no-dev && php artisan route:cache && php artisan config:cache && php artisan view:cache
 
 RUN chown root:www-data /var/www/html/storage -R && chmod 775 /var/www/html/storage -R
 
