@@ -39,6 +39,8 @@ distribuibles.
 
 `docker-compose up -d -f docker-compose-dist --build`
 
+Una vez levantado los contenedores, será necesario correr las migraciones y poblar las tablas debido a que dichos comandos no se encuentran incorporados para su ejecución automática.
+
 ### Estructura de Archivos
 
 * `/database` contiene el docker file de MySQL.
