@@ -14,7 +14,7 @@ class Municipality extends Model
     protected function name(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => strtoupper(iconv('UTF-8','ASCII//TRANSLIT',$value)),
+            get: fn ($value) => strtoupper(transliterator_transliterate('Any-Latin; Latin-ASCII; [\u0080-\u7fff] remove',$value)),
         );
     }
 }
