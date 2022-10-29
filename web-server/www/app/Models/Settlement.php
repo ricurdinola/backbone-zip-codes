@@ -17,7 +17,7 @@ class Settlement extends Model
     protected function localityName(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => strtoupper($value),
+            get: fn ($value) => strtoupper(iconv('UTF-8','ASCII//TRANSLIT',$value)),
         );
     }
 
@@ -25,7 +25,7 @@ class Settlement extends Model
     protected function name(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => strtoupper($value),
+            get: fn ($value) => strtoupper(iconv('UTF-8','ASCII//TRANSLIT',$value)),
         );
     }
 
