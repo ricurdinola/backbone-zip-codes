@@ -37,6 +37,8 @@ que los archivos fuentes se copian al contenedor en lugar de crear un montaje.
 Por otro lado, se ejecutan comandos de caché, tanto de rutas como de configuraciones en las versiones
 distribuibles.
 
+* Copiar el .env.example de laravel a .env y luego crear la imagen:
+
 `docker-compose -f docker-compose-dist.yml up --build -d --force-recreate`
 
 Una vez levantado los contenedores, será necesario correr las migraciones y poblar las tablas debido a que dichos comandos no se encuentran incorporados para su ejecución automática.
